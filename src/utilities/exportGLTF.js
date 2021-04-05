@@ -1,3 +1,5 @@
+import { GLTFExporter } from "three/examples/jsm/exporters/GLTFExporter.js";
+
 // saving function taken from three.js editor
 const link = document.createElement("a");
 link.style.display = "none";
@@ -14,7 +16,7 @@ const saveString = (text, filename) => {
 };
 
 function exportGLTF(input) {
-  const gltfExporter = new THREE.GLTFExporter();
+  const gltfExporter = new GLTFExporter();
 
   const options = {
     trs: false,
