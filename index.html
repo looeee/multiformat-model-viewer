@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Three.js Multi-Format Model Viewer</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
+    />
+
+    <link
+      rel="icon"
+      href="https://discoverthreejs.com/favicon.ico"
+      type="image/x-icon"
+    />
+    <link type="text/css" rel="stylesheet" href="main.css" />
+
+    <script type="module" src="./dist/main.js"></script>
+  </head>
+
+  <body>
+    <canvas></canvas>
+
+    <div id="loading-overlay" class="fill">
+      <div id="file-upload-form">
+        <p>
+          Multi-Format Viewer for FBX, glTF and Collada files and associated textures in jpg,
+          png, gif, bmp or dds format using loaders from three.js r127.
+        </p>
+        <input
+          id="file-upload-input"
+          type="file"
+          name="files[]"
+          multiple=""
+          class="hide"
+        />
+        <input
+          type="submit"
+          value="Upload or Drop Files Here"
+          id="file-upload-button"
+        />
+        <p>Or load the <a id="example-duck" href="#">Example Duck</a></p>
+      </div>
+
+      <div id="loading-bar" class="hide">
+        <span id="bar">
+          <span id="progress"></span>
+        </span>
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="controls-section-blank"></div>
+
+      <div class="controls-section-lighting">
+        <input
+          id="lighting-slider"
+          type="range"
+          min="0"
+          max="8"
+          step="0.1"
+          value="0"
+        />
+        <span id="light-symbol">Lighting</span>
+      </div>
+
+      <div class="controls-section-animation hide" id="animation-controls">
+        <select id="animation-clips">
+          <option value="static">Static Pose</option>
+        </select>
+        <button href="#" id="playback-control">
+          <span id="play-button" class="hide" aria-hidden="true">Play</span>
+          <span id="pause-button" class="" aria-hidden="true">Pause</span>
+        </button>
+        <input id="animation-slider" type="range" min="0" max="100" value="0" />
+        <button
+          id="export-anims"
+          href="#"
+          id="playback-control"
+          title="Save take as JSON"
+        >
+          Save Clip
+        </button>
+      </div>
+
+      <div class="controls-section-misc">
+        <div class="model-info hide">
+          <p>
+            Bounding box - L: <span id="bb-depth">0</span> W:
+            <span id="bb-width">0</span> H: <span id="bb-height">0</span>
+          </p>
+          <p>
+            Faces: <span id="faces"></span> Vertices:
+            <span id="vertices"></span>
+          </p>
+        </div>
+
+          <button href="#" id="toggle-grid" title="Toggle Grid">
+            Show Grid
+          </button>
+          <button href="#" id="toggle-info" title="Model info">
+            Show Info
+          </button>
+          <button
+            href="#"
+            id="toggle-environment"
+            title="Change Environment Map"
+          >
+            Switch Environment
+          </button>
+          <button href="#" id="toggle-background" title="Toggle background">
+            Toggle Background
+          </button>
+          <button href="#" id="fullscreen-button" title="Go fullscreen">
+            Fullscreen
+          </button>
+          <button href="#" id="screenshot-button" title="Take a screenshot">
+            Take Screenshot
+          </button>
+          <button href="#" id="export-gltf" title="Export to GLTF">
+            Export glTF
+          </button>
+          <button href="#" id="reset" title="Reset">Reset</button>
+      </div>
+    </div>
+  </body>
+</html>
