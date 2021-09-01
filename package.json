@@ -18,6 +18,6 @@
   },
   "dependencies": {
     "lodash-es": "^4.17.21",
-    "three": "^0.130.0"
+    "three": "^0.132.2"
   }
 }
