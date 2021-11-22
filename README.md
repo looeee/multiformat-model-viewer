@@ -40,3 +40,6 @@ Once you have loaded a model, you can export an animation clip as JSON, or the e
 * Color management is incorrect
 * Environment maps are incorrect (should use PRMREM)
 
+## License
+
+All code is MIT licensed, do whatever you like with it and have fun :) 
